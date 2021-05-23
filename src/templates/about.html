@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+
+{% block titile %}about page {% endblock %}
+
+{% block body %}
+	<h1>{{ body }}</h1>
+	{% for item in item_list %}
+		<li>{{ item }}</li>
+	{% endfor %}
+{% endblock %}

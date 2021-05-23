@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+
+{% block title %}
+home page
+{% endblock %}
+
+{% block body %}
+<h1>Home Page</h1>
+{% if user.is_authenticated %}
+<h2>Logined User: {{ user.username }} </h2>
+<h2>{{ request.path }}</h2>
+{% endif %}
+{% endblock %}
