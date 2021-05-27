@@ -1,6 +1,9 @@
 from django.http import HttpResponse
 from django.shortcuts import render
 from django.template.loader import get_template
+from django.contrib.auth import  get_user_model
+
+User =  get_user_model()
 
 def home_page(request):
 	template_name = "home.html"
@@ -13,5 +16,8 @@ def about_page(request):
 	"item_list":[1,2,3,5]
 	}
 	template_obj = get_template("about.html")
+	
+	qs =  User.objects.all()
+	print(qs)
 
 	return HttpResponse(template_obj.render(context))
