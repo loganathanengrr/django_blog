@@ -6,6 +6,7 @@ from .forms import BlogPostForm, BlogPostModelForm
 # Create your views here.
 
 
+@login_required
 def blog_list_page(request):
     template_name = 'blog/list.html'
     queryset = BlogPost.objects.all()
@@ -57,10 +58,9 @@ def blog_update_view(request, slug):
     template_name = "blog/form.html"
     return render(request, template_name, context)
 
+@login_required
 def blog_delete_view(request, slug):
-    print(slug)
     obj = get_object_or_404(BlogPost, slug=slug)
-    print(obj)
     if request.method == 'POST':
         obj.delete()
         return redirect('/blog')
