@@ -3,9 +3,9 @@
 {% block head_title %} detail page {% endblock %}
 
 {% block body %}
-
-    <h3>{{ obj.title }}</h3>
-    <p>{{ obj.content }}</p>
+	<div>
+		{% include "blog/list_inline.html" with blog_post=object detail=True truncate=False edit_or_delete=True%}
+	</div>
     
 {% endblock %}
 

@@ -121,6 +121,15 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
 
 STATIC_URL = '/static/'
+LOCAL_STATIC_CDN_PATH = BASE_DIR.parent / 'static_cdn'
+STATIC_ROOT = LOCAL_STATIC_CDN_PATH / 'static'
+STATICFILES_DIRS = [
+    BASE_DIR / 'staticfiles'
+]
+
+MEDIA_ROOT = LOCAL_STATIC_CDN_PATH / 'media'
+MEDIA_URL = '/media/'
+
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field

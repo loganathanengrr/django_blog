@@ -1,4 +1,5 @@
 from django import forms
+from django.contrib.admin import widgets
 
 from .models import BlogPost
 
@@ -12,6 +13,8 @@ class BlogPostModelForm(forms.ModelForm):
         model =  BlogPost
         fields = [
             "title",
+            "image",
             "slug",
-            "content"
+            "content",
+            "publish_date"
             ]
