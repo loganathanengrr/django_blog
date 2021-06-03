@@ -26,6 +26,7 @@ urlpatterns = [
     path('about/', about_page),
     path('blog-new/', blog_create_view, name="blog-create"),
     path('blog/',  include('blog.urls')),
+    path('searches/', include(('searches.urls', 'searches'),namespace="searches")),
 ]
 
 
